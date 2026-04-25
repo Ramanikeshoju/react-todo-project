@@ -61,6 +61,7 @@ function App() {
     if (newTask && newTask.trim() !== '') {
       const updatedTasks = tasks.map((task, i) => (i === index ? newTask : task));
       console.log("Task updated:", updatedTasks);
+      console.log("checking");
       setTasks(updatedTasks);
     }
   };
