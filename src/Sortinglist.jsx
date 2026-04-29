@@ -99,6 +99,10 @@ const instant_value =[
 function Sorthinglist () {
     const [sortlist , setSortlist] = useState(instant_value)
     const [search , setSearch] = useState(" ")
+    const filteredData = sortlist.filter(value => 
+        value.Name.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
       <div className="container">
           <div className="search-box">
@@ -111,17 +115,21 @@ function Sorthinglist () {
           </div>
 
         <div className="list">
-            {sortlist.filter(value => value.Name.toLowerCase().includes(search)).map((value, index) => (
-          <div className="card" key={index}>
-            <h1>Name : {value.Name}</h1>
-            <h2>Age : {value.age}</h2>
-            <h3>Place : {value.Place}</h3>
-          </div>
-    ))}
-  </div>
-</div>
-    )
+          {filteredData.length === 0 ? (
+            <h2 className="no-data">No Data Found</h2>
+          ) : (
+            filteredData.map((value, index) => (
+              <div className="card" key={index}>
+                <h1>Name : {value.Name}</h1>
+                <h2>Age : {value.age}</h2>
+                <h3>Place : {value.Place}</h3>
+              </div>
+            ))
+          )}
 
+        </div>
+      </div>
+    )
 }
 
 export default Sorthinglist

@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Sorthinglist from './Sortinglist';
+import PaginationPage from './PaginationPage';
+import UserList from './UserList';
+import Counter from './Counter';
+import Users from './Users';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Sorthinglist/>
+    <Users/>
+    {/* <Counter/> */}
+    {/* <UserList/> */}
+    {/* <PaginationPage/> */}
+    {/* <Sorthinglist/> */}
     {/* <App /> */}
   </React.StrictMode>
 );
